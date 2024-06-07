@@ -1,0 +1,10 @@
+{
+  "name": "WDIO-WebTest-2ndPract-Cour2",
+  "type": "module",
+  "devDependencies": {
+    "@wdio/cli": "^8.38.2",
+    "@wdio/local-runner": "^8.38.2",
+    "@wdio/mocha-framework": "^8.38.2",
+    "@wdio/spec-reporter": "^8.38.2"
+  }
+}
