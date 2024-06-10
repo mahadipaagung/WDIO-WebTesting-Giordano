@@ -24,26 +24,32 @@ class frontPage{
 
     async menClick() {
         await this.men.click()
+        await browser.pause(2000)
     }
 
     async womenClick() {
         await this.women.click()
+        await browser.pause(2000)
     }
 
     async juniorClick() {
         await this.junior.click()
+        await browser.pause(2000)
     }
 
     async poloClick() {
         await this.polo.click()
+        browser.pause(2000)
     }
 
     async teeClick() {
         await this.tee.click()
+        await browser.pause(2000)
     }
 
     async printteeClick() {
         await this.printtee.click()
+        await browser.pause(2000)
     }
 
     async shirtClick() {

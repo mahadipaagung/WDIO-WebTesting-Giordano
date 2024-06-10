@@ -1,6 +1,9 @@
 import frontpagepop from "../pageobjects/frontpagepop.page.js";
 
 describe('Testing FrontPage Navbar and Categories', () => {
+    // before( async () => {
+    //     await frontpagepop.openPage()
+    // })
     it("Men's nav button Testing", () => {
         frontpagepop.openPage()
         frontpagepop.menClick()

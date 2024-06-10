@@ -20,25 +20,46 @@ class poloBuy {
     get qty() { return $('#spinQty')}
 
     get add2cartbtn() { return $('#divAddChart > a')}
+    get toast() { return $('.toast-container > div > div')}
+    get shoppingcartqv() { return $('#shoppingCartQuickView > h5')}
 
 
     //function section
-    async openPage() {
-        await browser.url('https://giordano.com/ID/en-US/C1.aspx?TabID=100900&SysCateID=01&PageID=1')
+    // async openPage(i) {
+    //     let browsers = [
+    //         browser.url('https://giordano.com/ID/en-US/C1.aspx?TabID=100900&SysCateID=01&PageID=1'),
+    //         browser.url('https://giordano.com/ID/en-US/Product/01011413001/04')
+    //     ]
+    //     await browsers[i].click()
+    // }
+    async openProductsPage() {
+        await browser.url('https://giordano.com/ID/en-US/C1.aspx?TabID=100900')
+    }
+    
+    async openProduct3Page() {
+        await browser.url('https://giordano.com/ID/en-US/Product/01011413001/04')
     }
 
-    async poloGet() {
-        // let polos = [this.poloList1, this.poloList2, this.poloList3]
-        // await polos[i].waitForExist().then(polos[i].click())
-        await this.poloList3.waitForExist().then(this.poloList3.click())
+    async poloGet(i) {
+        let polos = [this.poloList1, this.poloList2, this.poloList3]
+        let poloss = polos[i]
+        await poloss.waitForExist()
+        await poloss.click()
+        await poloss.click()
+        await poloss.click()
         await browser.pause(2000)
+        // await this.poloList3.waitForExist().then(this.poloList3.click())
     }
 
     async colorPick(i) {
         let colors = [this.poloColor, this.poloColor1]
         await colors[i].waitForExist().then(colors[i].click())
-        await browser.pause(2000)
     }
+
+    // async colorPick() {
+    //     await this.poloColor1.waitForExist()
+    //     await this.poloColor1.click()
+    // }
 
     async sizePick(i) {
         let ukuran = [
@@ -50,8 +71,12 @@ class poloBuy {
         await browser.pause(2000)
     }
 
+    // async sizePick() {
+    //     await this.sizeM.waitForExist().then(this.sizeM.click())
+    // }
+
     async setQty(jml) {
-        await this.qty.waitForExist().then(this.qty.setValue(jml))
+        await this.qty.waitForExist().then(this.qty.clearValue().then(this.qty.setValue(jml)))
         await browser.pause(2000)
     }
 
