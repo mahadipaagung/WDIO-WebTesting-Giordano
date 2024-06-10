@@ -76,7 +76,7 @@ class poloBuy {
     // }
 
     async setQty(jml) {
-        await this.qty.waitForExist().then(this.qty.clearValue().then(this.qty.setValue(jml)))
+        await this.qty.waitForExist().then(this.qty.clearValue().then(this.qty.addValue(jml)))
         await browser.pause(2000)
     }
 
